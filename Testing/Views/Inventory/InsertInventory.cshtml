@@ -1,0 +1,18 @@
+﻿@model Inventory
+<h2>Create a New Item</h2>
+@using (Html.BeginForm("InsertItemToDatabase", "Inventory", "Post"))
+{
+    <input asp-for="Item" type="text" value="" />
+    <label asp-for="Item" class="control-label">Item</label>
+    <input type="text" name="Item" class="form-control" value="" />
+    <label asp-for="Size" class="control-label">Size</label>
+    <input type="text" name="Size" class="form-control" value="" />
+    <div class="form-group">
+        <input asp-for="Quantity" type="hidden" value="" />
+        <label asp-for="Quantity" class="control-label">Quantity</label>
+    </div>
+    <input type="submit" value="Create Item" class="btn btn-primary" />
+
+ 
+
+}

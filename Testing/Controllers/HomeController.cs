@@ -23,7 +23,7 @@ namespace Testing.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Inventory()
         {
             return View();
         }
