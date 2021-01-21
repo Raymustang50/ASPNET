@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Inventory>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MustangFB</title>
+</head>
+<body class="bgc">
+    <h2>Inventory</h2>
+    <div style="display: block">
+        <a href="/Inventory/InsertInventory/">Create a New Item</a>
+    </div>
+
+    @using (Html.BeginForm("Search", "Inventory", FormMethod.Get))
+    {
+        <p>
+            Find by name: @Html.TextBox("searchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Item</th>
+            <th>Size</th>
+            <th>Quantity</th>
+        </tr>
+
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td><a href=/Inventory/ViewInventory/@x.Id>@x.Id</a></td>
+                <td>@x.Item</td>
+                <td>@x.Size</td>
+                <td>@x.Quantity</td>
+            </tr>
+
+        }
+    </table>
+</body>
+</html>

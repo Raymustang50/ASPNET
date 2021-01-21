@@ -11,5 +11,6 @@ namespace Testing
         public void UpdateInventory(Inventory item);
         public void InsertInventory(Inventory itemToInsert);
         public void DeleteItem(Inventory dItem);
+        public IEnumerable<Inventory> SearchInventory(string search);
     }
 }

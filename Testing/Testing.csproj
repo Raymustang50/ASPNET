@@ -12,5 +12,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Inventory\" />
+    <Folder Include="Views\Images\" />
+    <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Images\BSFB.jpg" />
+    <Content Remove="wwwroot\Images\BSFBB.jpg" />
+    <Content Remove="wwwroot\Images\BSFBO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Images\BSFB.jpg" />
+    <None Include="wwwroot\Images\BSFBB.jpg" />
+    <None Include="wwwroot\Images\BSFBO.jpg" />
   </ItemGroup>
 </Project>

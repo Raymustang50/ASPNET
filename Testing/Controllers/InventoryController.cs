@@ -54,6 +54,7 @@ namespace Testing.Controllers
 
         public IActionResult InsertItemToDatabase(Inventory itemToInsert)
         {
+
             repo.InsertInventory(itemToInsert);
 
             return RedirectToAction("Index");
@@ -66,6 +67,16 @@ namespace Testing.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult InsertInventory()
+        {
+            return View(new Inventory());
+        }
+
+        public IActionResult Search(string searchString)
+        {
+            var search = repo.SearchInventory(searchString);
+            return View(search);
+        }
 
     }
 }

@@ -29,7 +29,7 @@ namespace Testing
         public void UpdateInventory(Inventory equipment)
         {
             _conn.Execute("UPDATE INVENTORY SET Quantity = @quantity WHERE ID = @id",
-                new { quantity = equipment.Quantity });
+                new { quantity = equipment.Quantity, id = equipment.Id });
         }
 
         public void InsertInventory(Inventory itemToInsert)
@@ -45,7 +45,11 @@ namespace Testing
                 new { id = dItem.Id });
         }
 
-
+        public IEnumerable<Inventory> SearchInventory(string search)
+        {
+            return _conn.Query<Inventory>("SELECT * FROM INVENTORY WHERE Item LIKE @item;",
+                new { Item = "%" + search + "%"});
+        }
 
     }
-    }
+ }

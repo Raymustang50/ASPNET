@@ -1,16 +1,26 @@
 ﻿@model Inventory
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MustangFB</title>
+    </head>
+    <body class="bgc">
 
-<h2>Update @Model.Item</h2>
+        <h2>Update @Model.Item</h2>
 
-@using (Html.BeginForm("UpdateInventoryToDatabase", "Inventory", "Post"))
-{
-    <input asp-for="Id" type="hidden" value="@Model.Id" />
+        @using (Html.BeginForm("UpdateInventoryToDatabase", "Inventory", "Post"))
+        {
+            <input asp-for="Id" type="hidden" value="@Model.Id" />
 
 
-    <label asp-for="Quantity" class="control-label">Quantity</label>
+            <label asp-for="Quantity" class="control-label">Quantity</label>
 
-    <input type="number" step="1" name="Quantity" class="form-control" value="@Model.Quantity" />
+            <input type="number" step="1" name="Quantity" class="form-control" value="@Model.Quantity" />
 
-    <input type="submit" value="Update Product" class="btn btn-primary" />
+            <input type="submit" value="Update Product" class="btn btn-primary" />
 
-}
+        }
+        </body>
+</html>
